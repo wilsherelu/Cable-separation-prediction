@@ -202,20 +202,20 @@ if train:
     savedata1 = np.array(outputdataX.cpu().detach().numpy())
     outdata1 = pd.DataFrame(savedata1)
     writer = pd.ExcelWriter('traindata.xlsx')  #
-    outdata1.to_excel(writer, 'mean', float_format='%.5f')  # ‘page_1’是写入excel的sheet名
+    outdata1.to_excel(writer, 'mean', float_format='%.5f') 
     savedata2 = np.array(outputerror.cpu().detach().numpy())
     outdata2 = pd.DataFrame(savedata2)
-    outdata2.to_excel(writer, 'std', float_format='%.5f')  # ‘page_1’是写入excel的sheet名
+    outdata2.to_excel(writer, 'std', float_format='%.5f')  
     writer.close()
 
 # if not(train):
 #     savedata1 = np.array(outputdataX.cpu().detach().numpy())
 #     outdata1 = pd.DataFrame(savedata1)
 #     writer = pd.ExcelWriter('validate.xlsx')
-#     outdata1.to_excel(writer, 'X', float_format='%.5f')  # ‘page_1’是写入excel的sheet名
+#     outdata1.to_excel(writer, 'X', float_format='%.5f')  
 #     savedata2 = np.array(outputtime.cpu().detach().numpy())
 #     outdata2 = pd.DataFrame(savedata2)
-#     outdata2.to_excel(writer, 'TIME', float_format='%.5f')  # ‘page_1’是写入excel的sheet名
+#     outdata2.to_excel(writer, 'TIME', float_format='%.5f')  
 #     writer.close()
 # io.savemat('savedia.mat',{'savedata':savedata1})
 # io.savemat('saveX.mat',{'savedata':savedata2})
